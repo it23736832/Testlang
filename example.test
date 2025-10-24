@@ -1,0 +1,31 @@
+config {
+  base_url = "http://localhost:8080";
+  header "Content-Type" = "application/json";
+}
+
+let user = "admin";
+let id = 42;
+let password = "1234";
+
+test Login {
+  POST "/api/login" {
+    body = "{ \"username\": \"$user\", \"password\": \"$password\" }";
+  };
+  expect status = 200;
+  expect header "Content-Type" contains "json";
+  expect body contains "token";
+}
+
+test GetUser {
+  GET "/api/users/$id";
+  expect status = 200;
+  expect body contains "\"id\":42";  // REMOVE SPACE
+}
+
+test UpdateUser {
+  PUT "/api/users/$id" {
+    body = "{ \"role\": \"ADMIN\" }";
+  };
+  expect status = 200;
+  expect body contains "\"updated\":true";  // REMOVE SPACE
+}
