@@ -1,0 +1,6 @@
+test ErrorDemo {
+  POST "/api/login" {
+    body = 123  // Wrong type, missing semicolon
+  }
+  expect status = 200
+}
