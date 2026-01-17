@@ -2,14 +2,7 @@
 
 A Domain-Specific Language (DSL) for HTTP API testing that compiles to JUnit 5 tests.
 
-**Name:** H D Hettiarachchi  
-**IT Number:** IT23736832  
-**Course:** SE2062  
-**Submission Date:** October 26, 2025
-
----
-
-## 🚀 Quick Start Guide
+##  Quick Start Guide
 
 ### Prerequisites
 - Java 11 or higher
